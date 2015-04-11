@@ -1,0 +1,3 @@
+#!/bin/sh
+
+TZ="Asia/Tokyo" ruby ~/app/mikutter/mikutter.rb $*

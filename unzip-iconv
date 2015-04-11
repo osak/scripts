@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+unzip -I utf-8 -O cp932 $*

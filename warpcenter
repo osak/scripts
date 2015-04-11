@@ -1,0 +1,11 @@
+#!/bin/sh
+
+window=`xprop -root | grep '^_NET_ACTIVE_WINDOW' | cut -d ' ' -f 5`
+x=`xwininfo -id $window | grep '^\s*Absolute upper-left X' | cut -d ':' -f 2`
+y=`xwininfo -id $window | grep '^\s*Absolute upper-left Y' | cut -d ':' -f 2`
+w=`xwininfo -id $window | grep '^\s*Width' | cut -d ':' -f 2`
+h=`xwininfo -id $window | grep '^\s*Height' | cut -d ':' -f 2`
+
+cursorx=$(($x + $w / 2))
+cursory=$(($y + $h / 2))
+xwarppointer abspos $cursorx $cursory
